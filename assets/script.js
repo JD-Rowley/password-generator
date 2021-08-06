@@ -15,7 +15,7 @@ var symbol = ["!","@","#","$","%","^","&","*","(",")",",",".","?",";",":","-","_
 function generatePassword() { 
   var length = prompt("Between 8 and 128, how many characters are your password?");
     if(length < 8 || length > 128) {
-      alert("Password length is invalid. It must be between 8 and 128.");
+      alert("Password length is invalid. It must be between 8 and 128 characters.");
       return "Invalid Input";
     }
   
@@ -42,17 +42,17 @@ function generatePassword() {
     if(numberConfirm === true) allCharacters = allCharacters.concat(number);
     if(symbolConfirm === true) allCharacters = allCharacters.concat(symbol);
 
-  var newPassword = "";
-    while(newPassword.length < length) {
-      var randomIndex = Math.floor(Math.random() * (allCharacters.length - 0 + 1) + 0);
+   var newPassword = "";
+     while(newPassword.length < length) {
+       var randomIndex = Math.floor(Math.random() * (allCharacters.length - 0 + 1) + 0);
 
-      newPassword = newPassword + allCharacters [randomIndex];
-    }
+       newPassword = newPassword + allCharacters [randomIndex];
+     }
 
   return newPassword;
 }
 var passwordLength = function() {
-    var lenght = "";
+    var length = "";
   }
 
 // Get references to the #generate element
