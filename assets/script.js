@@ -1,9 +1,3 @@
-// Assignment code here
-// Password length (8 - 128)
-// Prompt to include lowercase, uppercase, numeric, and/or special characters
-// Each prompt validated
-// Password generates written on page
-
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
@@ -26,6 +20,7 @@ function generatePassword() {
   var numberConfirm = confirm("Would you like to use numbers?");
 
   var symbolConfirm = confirm("Would you like to use symbols?");
+  
     var atLeastOne = false;
     if(lowerCaseConfirm === true || upperCaseConfirm === true || numberConfirm === true || symbolConfirm === true) {
       atLeastOne = true;
@@ -35,22 +30,25 @@ function generatePassword() {
       alert("Character type selection invalid. At least one must be selected.");
       return "Invalid Input";
     }
-  
-  var allCharacters = [];
-    if(lowerCaseConfirm === true) allCharacters = allCharacters.concat(lowerCase);
-    if(upperCaseConfirm === true) allCharacters = allCharacters.concat(upperCase);
-    if(numberConfirm === true) allCharacters = allCharacters.concat(number);
-    if(symbolConfirm === true) allCharacters = allCharacters.concat(symbol);
 
-   var newPassword = "";
-     while(newPassword.length < length) {
-       var randomIndex = Math.floor(Math.random() * (allCharacters.length - 0 + 1) + 0);
+   var allCharacters = [];
+     if(lowerCaseConfirm === true) allCharacters = allCharacters.concat(lowerCase);
+     if(upperCaseConfirm === true) allCharacters = allCharacters.concat(upperCase);
+     if(numberConfirm === true) allCharacters = allCharacters.concat(number);
+     if(symbolConfirm === true) allCharacters = allCharacters.concat(symbol);
 
-       newPassword = newPassword + allCharacters [randomIndex];
-     }
+     var newPassword = "";
+      for(i = 0; i < length; i++) {
+        var randomIndex = Math.floor(Math.random() * (allCharacters.length - 0 + 1) + 0);
 
-  return newPassword;
+        newPassword = newPassword + allCharacters[randomIndex];
+      }
+
+      console.log(newPassword);
+
+      return newPassword;
 }
+
 var passwordLength = function() {
     var length = "";
   }
